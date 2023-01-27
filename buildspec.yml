@@ -8,10 +8,10 @@ phases:
  pre_build:
   commands:
     - terraform init
+    - terraform apply
 
  build:
   commands:
-    - terraform apply
     - terraform $TF_COMMAND -auto-approve 
 
  post_build:
