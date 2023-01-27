@@ -5,15 +5,15 @@ phases:
   commands:
    - "wget https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip"
   
-  pre_build:
-   commands:
+ pre_build:
+  commands:
     - terraform init
 
-  build:
-   commands:
+ build:
+  commands:
     - terraform apply
     - terraform $TF_COMMAND -auto-approve 
 
-  post_build:
-   commands:
+ post_build:
+  commands:
     -echo terraform $TF_COMMAND completed on 'date'
